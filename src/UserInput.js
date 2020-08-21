@@ -9,6 +9,13 @@ class UserInput extends Component {
   updateName = (event) => {
     this.setState({ name: event.target.value });
   };
+  //prevent page from refreshing when name is inputed
+  handleSubmit = (event) => {
+    //prevents refresh
+    event.preventDefault();
+    //sets field back to empty string
+    this.setState({ name: "" });
+  };
 
   render() {
     return (
@@ -20,7 +27,13 @@ class UserInput extends Component {
           /*event listener for name typing box*/
           onChange={this.updateName}
         />
-        <input type="submit" value="Create Name Tag" />.
+        <input
+          type="submit"
+          value="Create Name Tag"
+          //event listener for submit button
+          onSubmit={this.handleSubmit}
+        />
+        .
       </form>
     );
   }
