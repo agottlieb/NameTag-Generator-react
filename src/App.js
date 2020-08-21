@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import NameTagList from './NameTagList.js';
-
+import React, { Component } from "react";
+import NameTagList from "./NameTagList.js";
+import UserInput from "./UserInput.js";
 class App extends Component {
   state = {
-    names: ['Erin', 'Ann', 'Nichole', 'Sharon', 'Maryn'],
+    names: ["Erin", "Ann", "Nichole", "Sharon", "Maryn"]
   };
-  removeName = clickedIndex => {
+  removeName = (clickedIndex) => {
     // to learn how the .filter method works, check out https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     var filterCallback = (_, index) => index !== clickedIndex;
     var newNames = this.state.names.filter(filterCallback);
@@ -13,7 +13,7 @@ class App extends Component {
   };
   render() {
     return (
-      <div className='App'>
+      <div className="App">
         <h1>Name Tag Generator</h1>
         <NameTagList names={this.state.names} removeName={this.removeName} />
       </div>
