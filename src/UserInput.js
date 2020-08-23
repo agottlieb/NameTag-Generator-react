@@ -9,7 +9,7 @@ class UserInput extends Component {
   updateName = (event) => {
     this.setState({ name: event.target.value });
   };
-  //prevent page from refreshing when name is inputed
+
   handleSubmit = (event) => {
     //prevents refresh
     event.preventDefault();
@@ -24,7 +24,7 @@ class UserInput extends Component {
           type="text"
           placeholder="Add a new name here..."
           value={this.state.name}
-          /*event listener for name typing box*/
+          //event listener for name typing box
           onChange={this.updateName}
         />
         <input
