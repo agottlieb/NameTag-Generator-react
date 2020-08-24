@@ -5,19 +5,19 @@ class App extends Component {
   state = {
     names: ["William", "Rufus", "Morris", "Seymour", "Gladys"]
   };
-  //event handler for saving names
-  componentDidUpdate() {
-    var savedNamesString = JSON.stringify(this.state.names);
-    localStorage.setItem("savedNamesString", savedNamesString);
-  }
 
   //event handler/lifecyle for mounting component
   componentDidMount() {
-    var savedNamesString = localStorage.getItem("savedNamesString");
+    var savedNamesString = localStorage.getItem("savedNames");
     if (savedNamesString) {
       var savedNames = JSON.parse(savedNamesString);
-      this.setState(savedNames);
+      this.setState({ names: savedNames });
     }
+  }
+  //event handler for saving names
+  componentDidUpdate() {
+    var savedNamesString = JSON.stringify(this.state.names);
+    localStorage.setItem("savedNames", savedNamesString);
   }
 
   removeName = (clickedIndex) => {
