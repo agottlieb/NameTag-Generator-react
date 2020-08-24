@@ -3,8 +3,11 @@ import NameTagList from "./NameTagList.js";
 import UserInput from "./UserInput.js";
 class App extends Component {
   state = {
-    names: ["Erin", "Ann", "Nichole", "Sharon", "Maryn"]
+    names: ["William", "Rufus", "Morris", "Seymour", "Maryn"]
   };
+  //event handler for saving names
+  componentDidUpdate() {}
+
   removeName = (clickedIndex) => {
     // to learn how the .filter method works, check out https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
     var filterCallback = (_, index) => index !== clickedIndex;
