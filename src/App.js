@@ -6,7 +6,10 @@ class App extends Component {
     names: ["William", "Rufus", "Morris", "Seymour", "Maryn"]
   };
   //event handler for saving names
-  componentDidUpdate() {}
+  componentDidUpdate() {
+    var savedNamesString = JSON.stringify(this.state.names);
+    localStorage.setItem("savedNameString", savedNamesString);
+  }
 
   removeName = (clickedIndex) => {
     // to learn how the .filter method works, check out https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
